@@ -1,0 +1,18 @@
+$white: #fefefe;
+$black: #010101;
+$lightBg: #c3f2ff;
+$mainColor: #00C6FF;
+$noticeColor: #ff5e00;
+$mainColorGradient: linear-gradient(
+  to right, 
+  #00c8ff,
+  #c3f2ff
+);
+$radialGradientOverlay: radial-gradient(
+  rgba(0,0,0,0.67),
+  rgba(0,0,0,0.9)
+);
+$navGradient: linear-gradient(
+  rgba(0,0,0,0.8), 
+  rgba(0,0,0,0.0));
+$transition: all .3s linear;

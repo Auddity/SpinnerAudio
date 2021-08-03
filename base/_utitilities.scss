@@ -1,0 +1,94 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.container {
+  width: 90%;
+  max-width: 110rem;
+  margin: 0 auto;
+}
+
+.current {
+  color: v.$mainColor;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-gradient {
+  background: v.$mainColorGradient;
+  background-clip: initial;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  background: transparent;
+  color: v.$mainColor;
+  transition: v.$transition;
+  font-size: 2rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid v.$white;
+  border-radius: .5rem;
+  cursor: pointer;
+
+  &:hover {
+    background: v.$mainColor;
+    color: v.$white;
+  }
+}
+
+.section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  &-title {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1.5rem 0;
+    background: v.$mainColorGradient;
+      background-clip: initial;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  &-title, &-content {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.show {
+  height: auto !important;
+}
+
+.top-link {
+  position: fixed;
+  right: 4rem;
+  bottom: 4rem;
+  background-color: v.$lightBg;
+  padding: .5rem 1rem;
+  border: 2px solid v.$noticeColor;
+  border-radius: .5rem;
+  animation: pulse infinite 2s ease-in-out;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.show-link {
+  visibility: visible;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1) }
+  50% { transform: scale(0.9) }
+  100% { transform: scale(1) }
+}

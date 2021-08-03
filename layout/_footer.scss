@@ -1,0 +1,12 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.footer {
+  width: 100%;
+  padding: 2rem 0;
+  @include mx.flexCenter;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background: v.$mainColorGradient
+}

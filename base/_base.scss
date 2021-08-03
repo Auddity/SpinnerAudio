@@ -1,0 +1,33 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  color: mx.setTextColor(v.$black);
+}
+
+a {
+  text-decoration: none;
+  color: v.$mainColor;
+}
+
+ul {
+  list-style-type: none;
+}

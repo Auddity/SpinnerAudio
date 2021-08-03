@@ -1,0 +1,168 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.header {
+  position: relative;
+  min-height: 100vh;
+  background: 
+    url('../imgs/roland-schumann-cthYaBShLaw-unsplash-1920x1080.jpg')
+    no-repeat 
+    center / cover;
+  padding-bottom: 2rem;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    background-image: v.$radialGradientOverlay;
+    z-index: 0;
+  }
+
+  .nav {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    background-image: v.$navGradient;
+    padding: 2rem 0;
+    
+    &-header {
+      @include mx.flexCenter;
+      justify-content: space-between;
+      @include mx.mq(768px) {
+        margin: 0 10%;
+      }
+      @include mx.mq(1024px) {
+        max-width: 110rem;
+        margin: 0 auto;
+      }
+
+      .fixed-nav-image {
+        display: none;
+      }
+      
+      .nav-toggle {
+        margin-right: 3rem;
+        @include mx.mq(1024px) {
+          display: none;
+        }
+      }
+    }
+    
+    &-links-container {
+      text-align: center;
+      height: 0;
+      transition: all .4s linear;
+      overflow: hidden;
+      
+      .links {
+        padding-top: 2rem;
+        text-transform: capitalize;
+        @include mx.mq(1024px) {
+          display: flex;
+          justify-content: flex-end;
+          width: 40%;
+          margin-top: 1rem;
+          position: absolute;
+          top: 0;
+          right: 15%;
+        }
+        
+        .scroll-link {
+          @include mx.mqh(736px) {
+            padding-top: 1rem;
+            letter-spacing: 2px;
+          }
+          @include mx.mq(1024px) {
+            margin-right: 3rem;
+          }
+
+          &:hover {
+            
+          }
+        }
+      }
+    }
+
+    // Fixed Position Nav on Scroll
+    &.fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      background-color: v.$lightBg;
+      background-image: none;
+      border-bottom: 2px solid v.$noticeColor;
+      z-index: 5;
+
+      & .reg-nav-image {
+        display: none;
+      }
+      & .fixed-nav-image {
+        display: block;
+      }
+
+      .nav-toggle {
+        border: 2px solid v.$noticeColor;
+      }
+
+      .links .scroll-link a {
+        color: mx.setTextColor(v.$lightBg);
+      }  
+    }
+  }
+
+
+  &-content {
+    color: mx.setTextColor(v.$black);
+    max-width: 60rem;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    margin: 3rem auto 0;
+    @include mx.mq(736px) {
+      margin-top: 20rem;
+    }
+    @include mx.mqwh(736px, 414px) {
+      margin-top: 2rem;
+    }
+    @include mx.mqwh(768px, 900px) {
+      margin-top: 20rem;
+    }
+    
+    @include mx.mqwh(1024px, 768px) {
+      margin-top: 10rem;
+    }
+
+    .notice-container {
+      text-align: center;
+      background: v.$lightBg;
+      color: mx.setTextColor(v.$lightBg);
+      padding: 2rem;
+      border: 3px solid v.$noticeColor;
+      border-radius: .5rem;
+      margin-bottom: 3rem;
+      @include mx.mq(736px) {
+        margin-bottom: 5rem;
+      }
+
+      span:first-of-type {
+        color: v.$noticeColor;
+        font-size: 1.8rem;
+      }
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+
+      span:last-of-type {
+        background: v.$mainColorGradient;
+        background-clip: initial;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

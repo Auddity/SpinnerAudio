@@ -1,0 +1,99 @@
+@use '../abstract/variables' as v;
+@use '../abstract/mixins' as mx;
+
+.section {
+  &#contact {
+    background: url('../imgs/manny-becerra-NzZt3GEkEDc-unsplash-1920x2880.jpg')
+      no-repeat
+      center / cover;
+    padding-bottom: 1.5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 0 0;
+      width: 100%;
+      height: 100%;
+      background-image: v.$radialGradientOverlay;
+      z-index: 0;
+    }
+
+    p, label {
+      color: mx.setTextColor(v.$black);
+    }
+
+    .section-content {
+      width: 100%;
+      max-width: 110rem;
+      margin: 0 auto;
+      @include mx.flexCenter;
+      justify-content: space-around;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      @include mx.mq(736px) {
+        align-items: flex-start;
+        margin-top: 20rem;
+      }
+      @include mx.mqwh(736px, 414px) {
+        margin-top: 2rem;
+      }
+      @include mx.mqwh(768px, 900px) {
+        margin-top: 20rem;
+      }
+
+      .contact-title {
+        @include mx.mqh(736px) {
+          margin-top: 2rem;
+        }
+      }
+
+      .contact, .contact-form-container {
+        min-width: 30rem;
+        max-width: 80rem;
+      }
+
+      .contact-info {
+        padding: 1.5rem 2rem 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-form-container {
+        .form {
+          .form-control {
+            padding: 1rem 0;
+  
+            label, input {
+              display: block;
+              width: 100%;
+            }
+  
+            label {
+              margin-bottom: .5rem;
+            }
+  
+            input {
+              height: 3rem;
+              padding: 1.2rem;
+            }
+
+            input:focus, input:active {
+              border: 1px solid v.$mainColor;
+            }
+  
+            textarea {
+              width: 100%;
+              height: 5rem;
+              padding: 1.2rem;
+            }
+  
+            .submit-btn {
+              display: block;
+              width: 80%;
+              margin: 1.5rem auto 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
