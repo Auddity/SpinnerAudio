@@ -30,6 +30,10 @@
   -webkit-text-fill-color: transparent;
 }
 
+.current a {
+  border-bottom: 2px solid v.$noticeColor;
+}
+
 .btn {
   background: transparent;
   color: v.$mainColor;

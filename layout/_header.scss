@@ -78,8 +78,8 @@
             margin-right: 3rem;
           }
 
-          &:hover {
-            
+          &:hover a {
+            border-bottom: 2px solid v.$mainColor;
           }
         }
       }
