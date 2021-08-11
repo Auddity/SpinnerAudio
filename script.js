@@ -3,8 +3,8 @@ const navToggle = document.getElementById('nav-toggle');
 const linksContainer = document.getElementById('nav-links-container');
 const links = document.getElementById('links')
 
-const containerHeight = linksContainer.getBoundingClientRect().height;
 navToggle.addEventListener('click', () => {
+  const containerHeight = linksContainer.getBoundingClientRect().height;
   const linksHeight = links.getBoundingClientRect().height;
 
   if(containerHeight === 0){
