@@ -7,10 +7,6 @@
   margin: 0 auto;
 }
 
-.current {
-  color: v.$mainColor;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -28,10 +24,6 @@
   background-clip: initial;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.current a {
-  border-bottom: 2px solid v.$noticeColor;
 }
 
 .btn {
